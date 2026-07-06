@@ -1,0 +1,131 @@
+[versions]
+#===================
+#===== Project =====
+#===================
+# @keep
+min-sdk = "26"
+target-sdk = "37"   #
+compile-sdk = "37"  #
+# @keep
+#plugin = "0.8.1"
+# @keep
+ndkVersion = "30.0.14904198 rc1"    #		30.0.14904198 rc1
+# @keep
+versionCode = "001"
+# @keep
+versionName = "0.0.1"
+# @keep
+applicationId = "com.childmathematics.android.workschedule"
+# @keep
+appNameRelease = "WorkSchedule"
+# @keep
+appNameDebug = "WorkSchedule Debug"
+# @keep
+buildToolsVersion = "37.0.0"    #
+# @keep
+keystorePropertiesFile = "G:\\Public\\AndroidStudioProjects\\KeyStore\\WorkSchedule\\keystore.properties"
+#===================
+#===== Compile =====
+#===================
+#androidGradlePlugin
+agp = "9.2.1"                               #
+#---???????????????????
+jetbrainsKotlin = "2.4.0"                  #2.4.0  hilt?
+jetbrainsKotlinStdlib = "2.3.20"                  #
+jetbrainsKotlinxCoroutines = "1.11.0"        #1.10.2
+#----------------------------------------
+googleAccompanist = "0.36.0"
+googleDevToolsKsp = "2.3.4"         #
+googleDaggerHilt = "2.60"             # 2.59.2
+googleAds = "25.4.0"                        #
+googlePlayAppUpdate ="2.1.0"
+#---------------------------
+androidxAppcompatv7 = "28.0.0"
+androidxAppcompat = "1.7.1"
+androidxActivityKtx = "1.13.0"               #
+androidxCoreKtx = "1.19.0"                  #
+androidxRecyclerview = "1.4.0"
+androidx-glance = "1.1.1"                   #
+androidxNavigation = "2.9.8"                #
+androidxLifecycle = "2.11.0"                 #
+androidxAnnotation = "1.10.0"                #
+androidxViewpager2 = "1.1.0"                #
+androidxRoom = "2.8.4"
+androidxProfileinstaller = "1.4.1"
+androidxStartup = "1.2.0"
+androidxWindow = "1.5.1"
+androidxUiToolingPreview = "1.11.4"           #
+androidx-webkit = "1.16.0"                   #
+#===========================
+#===== Android Compose ===       ==
+#===========================
+androidxComposeBom = "2026.06.01"            #
+#---------------
+androidxActivityCompose = "1.13.0"              #
+androidxComposeCompiler = "1.5.15"            #agp
+#--------------------------------
+firebaseBom = "34.15.0"
+firebaseCrashlyticsPlugin = "3.0.6"
+firebasePerfPlugin = "2.0.2"
+#--------------------------
+#this plugin provides a task to determine which dependencies have updates.
+benmanesVersions = "0.54.0"
+#littlerobotsVersionCatalogUpdate = "latest.release" #0.8.1"  # nl.littlerobots.version-catalog-update
+littlerobotsVersionCatalogUpdate = "1.1.0"
+#Square’s meticulous HTTP client for Java and Kotlin.
+squareUpOkhttp = "5.3.2"
+#A type-safe HTTP client for Android and Java.
+squareUpRetrofit2 = "3.0.0"
+devSnapper = "0.3.0"        # 1.3.0         Snapper в настоящее время устарел, поскольку его функционал
+#                                   заменен на SnapFlingBehavior, доступный в Jetpack Compose 1.3.0.
+#================
+#===== Yandex =====
+#================
+yandexmMobileads = "8.1.0"          #
+yandexAppMetrica = "8.0.1"          #
+#================
+#===== Test =====
+#================
+androidxTest = "1.7.0"
+androidxTestExt = "1.3.0"
+androidxTestRunner = "1.7.0"
+androidxTestMonitor = "1.8.0"
+androidxTestEspressoCore = "3.7.0"
+androidxComposeUiTestManifest = "1.11.4"
+#testandroidxjunit = "1.1.3"
+#testandroidxrules =  "1.4.0"
+#testandroidxuiautomator =  "2.2.0"
+#JUnit is a unit testing framework to write and run repeatable automated tests on Java.
+junitTest = "4.13.2"
+toolsCore = "1.0.0-alpha14"
+material = "1.14.0"
+junit = "4.13.2"
+uiUnit = "1.11.4"
+foundationLayout = "1.11.4"
+foundation = "1.11.4"
+coreI18n = "1.0.0"
+core-splashscreen = "1.2.0"
+#===================#===================#===================#===================
+#==========================
+junitVersion = "1.3.0"
+#------------------------------
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "jetbrainsKotlin" }
+
