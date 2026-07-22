@@ -1,3 +1,4 @@
+//import ads_mobile_sdk.r8
 import androidx.room.gradle.RoomExtension
 import java.io.FileInputStream
 import java.time.LocalDateTime
@@ -5,9 +6,6 @@ import java.time.format.DateTimeFormatter
 import java.util.Properties
 
 plugins {
-//    alias(libs.plugins.android.application)
-//    alias(libs.plugins.jetbrains.kotlin.plugin.compose)
-
     id("com.android.application")
 //    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -22,35 +20,128 @@ android {
 //    namespace = "com.childmathematics.android.workschedule"
     namespace = libs.versions.applicationId.get()
     compileSdk {
-        version = release(37) {
+        version = release(libs.versions.compile.sdk.get().toInt()) {
             minorApiLevel = 1
         }
     }
 
     defaultConfig {
-        applicationId = "com.childmathematics.android.workschedule"
+        applicationId = libs.versions.applicationId.get()
         namespace = libs.versions.applicationId.get()
-        minSdk = 26
-        targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.target.sdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+        android.buildFeatures.buildConfig = true
+
+        buildConfigField("String", "BUILD_TIMESTAMP", getDate())
+        buildConfigField("String", "BUILD_Date_Rus", getDate())
+        // ------------------------------------------------------------------
+        //  Статистика и реклама
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        buildConfigField("boolean", "YaAdsEnable", "false")
+        // Включае не забудь об арр AppYandexMetricaInit.java AdMob.kt, MainYainterstitial.kt
+        // Включае не забудь об арр AppYandexMetricaInit.java AdMob.kt, MainYainterstitial.kt
+        buildConfigField("boolean", "AdMobEnable", "false")
+        // Включав не забудь об арр AppYandexMetricaInit.java AdMob.kt, MainYainterstitial.kt
+        buildConfigField("boolean", "AppMetricaOn", "false") // Включав не забудь об арр AppYandexMetricaInit.java
+        // ======================================================================
+        buildConfigField("boolean", "HomeRouteEnable", "true") // Включение-отключение модуля
+        buildConfigField("boolean", "SettingsRouteEnable", "false") // Включение-отключение модуля
+        buildConfigField("boolean", "ToDoRouteEnable", "false") // Включение-отключение модуля
+        buildConfigField("boolean", "ScheduleRouteEnable", "false") // Включение-отключение модуля
+        buildConfigField("boolean", "Schedule01RouteEnable", "true") // Включение-отключение модуля
+        buildConfigField("boolean", "Schedule500RouteEnable", "true") // Включение-отключение модуля
+        // ======================================================================
+        signingConfigs {
+
+            // Create a variable called keystorePropertiesFile, and initialize it to your
+            // keystore.properties file, in the  folder.
+            val keystorePropertiesFile = File(libs.versions.keystorePropertiesFile.get())
+
+            // Initialize a new Properties() object called keystoreProperties.
+            val keystoreProperties = Properties()
+
+            // Load your keystore.properties file into the keystoreProperties object.
+            keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
+            // -------------------------------------------
+            create("release") {
+                keyAlias = keystoreProperties["RELEASE_KEY_ALIAS"] as String
+                keyPassword = keystoreProperties["RELEASE_KEY_PASSWORD"] as String
+                storeFile = file(keystoreProperties["RELEASE_STORE_FILE"] as String)
+                storePassword = keystoreProperties["RELEASE_STORE_PASSWORD"] as String
+            }
+            // ----------------------------
+        }
     }
 
     buildTypes {
+        create("customDebugType") {
+            isDebuggable = true
+        }
+/*
         release {
             optimization {
                 enable = false
             }
         }
+
+ */
+        release {
+            /*
+            optimization {
+                android.r8.gradual.support = true
+                enable = true
+            }
+
+             */
+            isMinifyEnabled = true // включение/выключение ProGuard
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
+            // Native Development Kit (NDK) — это набор инструментов, позволяющий использовать код C и C++ с Android.
+            // Появление предупреждения в Google Play Console означает, что ваше приложение содержит код C/C++.
+            // Для отладки собственного кода необходимы собственные символы отладки.
+            /*
+                        ndk {
+            //                debugSymbolLevel ="none"    // "symbol_table"  "full"
+                        }
+             */
+        }
+        getByName("debug") {
+
+            multiDexEnabled = true
+            isDebuggable = true
+            isMinifyEnabled = false // включение/выключение ProGuard
+            //         isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            applicationIdSuffix = ".debug"
+        }
+
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 extensions.configure<RoomExtension> {
@@ -64,6 +155,7 @@ extensions.configure<RoomExtension> {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
+ //   implementation(libs.ads.mobile.sdk)
 //--------------------------------------------------------------------------
     implementation( libs.dev.chrisbanes.snapper.snapper)    //?????? Snapper в настоящее время устарел,
     // поскольку его функционал заменен на SnapFlingBehavior,
@@ -145,9 +237,8 @@ dependencies {
     // ADS SUPPORT
     // ////
     implementation(libs.google.ads)
-//    implementation(libs.yandex.mobileads)
-//        implementation(libs.yandex.mobmetrica)
-//        implementation(libs.yandex.appmetrica)
+    implementation(libs.yandex.mobileads)
+    implementation(libs.yandex.appmetrica)
 
     // /////////////
     // TEST AND DEBUG SUPPORT
@@ -168,10 +259,9 @@ dependencies {
 //    debugImplementation(libs.androidx.ui.tooling)
 //    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
+//========================================================================
 fun getDate(): String {
     val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
     return "\"" + LocalDateTime.now().format(formatter) + "\""
-
 //========================================================================
-
 }
