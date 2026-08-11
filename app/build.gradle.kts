@@ -21,7 +21,7 @@ android {
     namespace = libs.versions.applicationId.get()
     compileSdk {
         version = release(libs.versions.compile.sdk.get().toInt()) {
-            minorApiLevel = 1
+ //           minorApiLevel = 1
         }
     }
 
