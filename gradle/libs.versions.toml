@@ -11,9 +11,9 @@ compile-sdk = "37"  #
 # @keep
 ndkVersion = "30.0.16138531"    #		30.0.16138531rc1
 # @keep
-versionCode = "001"
+versionCode = "002"
 # @keep
-versionName = "0.0.1"
+versionName = "0.0.2"
 # @keep
 applicationId = "com.childmathematics.android.workschedule"
 # @keep
