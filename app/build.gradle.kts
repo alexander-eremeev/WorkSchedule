@@ -13,6 +13,8 @@ plugins {
     id("com.google.dagger.hilt.android")
 
     id("androidx.room")                         // Plugin для настройки параметров компилятора Room
+//    alias(libs.plugins.android.dynamic.feature)
+    alias(libs.plugins.kotlin.serialization)
 
 }
 
@@ -155,7 +157,8 @@ extensions.configure<RoomExtension> {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
- //   implementation(libs.ads.mobile.sdk)
+    implementation(libs.androidx.ui)
+    //   implementation(libs.ads.mobile.sdk)
 //--------------------------------------------------------------------------
     implementation( libs.dev.chrisbanes.snapper.snapper)    //?????? Snapper в настоящее время устарел,
     // поскольку его функционал заменен на SnapFlingBehavior,
@@ -223,6 +226,16 @@ dependencies {
     implementation(libs.firebase.analytics)
 
     implementation(libs.splashscreen)
+    //------------------------------
+    implementation(libs.androidx.material3.navigation3)
+
+    implementation(libs.kotlinx.serialization.core)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+
+    //========================================
 
 
     // /////////////

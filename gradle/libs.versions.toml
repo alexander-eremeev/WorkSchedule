@@ -33,6 +33,7 @@ agp = "9.4.0"                               #9.3.1
 jetbrainsKotlin = "2.4.20"                  #2.4.0  hilt?
 jetbrainsKotlinStdlib = "2.3.20"                  #
 jetbrainsKotlinxCoroutines = "1.11.0"        #1.10.2
+kotlinxSerializationCore = "1.11.0"
 #----------------------------------------
 googleAccompanist = "0.36.0"
 googleDevToolsKsp = "2.3.6"         #
@@ -47,6 +48,8 @@ androidxCoreKtx = "1.19.0"                  #
 androidxRecyclerview = "1.4.0"
 androidx-glance = "1.2.0"                   #
 androidxNavigation = "2.10.1"                #
+navigation3 = "1.2.0-rc01"
+nav3Material = "1.3.0"
 androidxLifecycle = "2.11.0"                 #
 androidxAnnotation = "1.10.0"                #
 androidxViewpager2 = "1.1.0"                #
@@ -109,6 +112,7 @@ core-splashscreen = "1.2.0"
 #==========================
 junitVersion = "1.3.0"
 adsMobileSdk = "1.4.0"
+ui = "1.12.1"
 #------------------------------
 [libraries]
 #androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
@@ -116,6 +120,8 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 #androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 #androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidxLifecycle" }
+
 #androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivityCompose" }
 #androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 #androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -136,6 +142,9 @@ jetbrains-kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-
 jetbrains-kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "jetbrainsKotlin" }
 jetbrains-test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "jetbrainsKotlinxCoroutines" }
 jetbrains-kotlin-metadata = { module = "org.jetbrains.kotlin:kotlin-metadata-jvm", version.ref = "jetbrainsKotlin" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinxSerializationCore" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationCore" }
+
 #-------------------------
 google-accompanist-navigation = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "googleAccompanist" }
 google-accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "googleAccompanist" }
@@ -220,12 +229,15 @@ androidx-compose-material-iconsCore = { module = "androidx.compose.material:mate
 androidx-compose-material-iconsExtended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
 androidx-compose-material3-window-size = { module = "androidx.compose.material3:material3-window-size-class" }
+androidx-material3-navigation3 = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation3", version.ref = "nav3Material" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-compose-ui-graphics= { module = "androidx.compose.ui:ui-graphics" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util" }
 #---------------------------------------------------
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigation" }
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
 #----------------------------------------------------
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxTestEspressoCore" }
 androidx-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "androidxTestEspressoCore" }
@@ -273,6 +285,7 @@ androidx-compose-foundation-layout = { group = "androidx.compose.foundation", na
 androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 androidx-core-i18n = { group = "androidx.core", name = "core-i18n", version.ref = "coreI18n" }
 ads-mobile-sdk = { group = "com.google.android.libraries.ads.mobile.sdk", name = "ads-mobile-sdk", version.ref = "adsMobileSdk" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 #===================#===================#===================#===================
 [bundles]
 networking = [
@@ -359,3 +372,6 @@ google-ksp = { id = "com.google.devtools.ksp", version.ref = "googleDevToolsKsp"
 #-----Migrating a Jetpack Compose project
 #org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlin" }
 jetbrains-kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "jetbrainsKotlin" }
+android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "jetbrainsKotlin"}
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "googleDaggerHilt" }

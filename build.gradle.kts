@@ -6,6 +6,9 @@ plugins {
 //    id("org.jetbrains.kotlin.android") version libs.versions.jetbrainsKotlin apply false
     id("org.jetbrains.kotlin.plugin.compose") version libs.versions.jetbrainsKotlin apply false
 //    id(libs.versions.plugins.jetbrains.kotlin.plugin.compose) version libs.versions.jetbrainsKotlin apply false
+    alias(libs.plugins.android.dynamic.feature) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+
 
     id("com.google.devtools.ksp") version libs.versions.googleDevToolsKsp apply false
     id("com.google.dagger.hilt.android") version libs.versions.googleDaggerHilt apply false
