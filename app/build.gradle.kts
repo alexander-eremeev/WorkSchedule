@@ -249,7 +249,7 @@ dependencies {
     // /////////////
     // ADS SUPPORT
     // ////
-    implementation(libs.google.ads)
+    //implementation(libs.google.ads)
     implementation(libs.yandex.mobileads)
     implementation(libs.yandex.appmetrica)
 
@@ -257,7 +257,6 @@ dependencies {
     // TEST AND DEBUG SUPPORT
     // ////
     testImplementation(libs.junit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.test.ext.junit.ktx)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
