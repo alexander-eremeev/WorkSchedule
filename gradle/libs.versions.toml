@@ -44,21 +44,21 @@ googlePlayAppUpdate ="2.1.0"
 androidxAppcompatv7 = "28.0.0"
 androidxAppcompat = "1.8.0"
 androidxActivityKtx = "1.13.0"               #
-androidxCoreKtx = "1.19.0"                  #
+androidxCoreKtx = "1.19.1"                  #
 androidxRecyclerview = "1.4.0"
 androidx-glance = "1.2.0"                   #
-androidxNavigation = "2.10.1"                #
-navigation3 = "1.2.0-rc01"
+androidxNavigation = "2.10.2"                #
+navigation3 = "1.2.0"
 nav3Material = "1.3.0"
 androidxLifecycle = "2.11.0"                 #
-androidxAnnotation = "1.10.0"                #
+androidxAnnotation = "1.11.0"                #
 androidxViewpager2 = "1.1.0"                #
 androidxRoom = "2.8.5"
 androidxProfileinstaller = "1.4.1"
 androidxStartup = "1.2.0"
 androidxWindow = "1.5.1"
 androidxUiToolingPreview = "1.12.1"           #
-androidx-webkit = "1.17.0"                   #
+androidx-webkit = "1.17.1"                   #
 #===========================
 #===== Android Compose ===       ==
 #===========================
@@ -85,7 +85,7 @@ devSnapper = "0.3.0"        # 1.3.0         Snapper в настоящее вре
 #===== Yandex =====
 #================
 yandexmMobileads = "8.5.0"          #
-yandexAppMetrica = "8.5.1"          #
+yandexAppMetrica = "8.6.0"          #
 #================
 #===== Test =====
 #================
@@ -111,8 +111,9 @@ core-splashscreen = "1.2.0"
 #===================#===================#===================#===================
 #==========================
 junitVersion = "1.3.0"
-adsMobileSdk = "1.4.0"
+adsMobileSdk = "1.5.0"
 ui = "1.12.1"
+navigationCommonKtx = "2.10.2"
 #------------------------------
 [libraries]
 #androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
@@ -286,6 +287,7 @@ androidx-foundation = { group = "androidx.compose.foundation", name = "foundatio
 androidx-core-i18n = { group = "androidx.core", name = "core-i18n", version.ref = "coreI18n" }
 ads-mobile-sdk = { group = "com.google.android.libraries.ads.mobile.sdk", name = "ads-mobile-sdk", version.ref = "adsMobileSdk" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
+androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "navigationCommonKtx" }
 #===================#===================#===================#===================
 [bundles]
 networking = [

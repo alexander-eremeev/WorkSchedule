@@ -1,4 +1,4 @@
-package com.childmathematics.android.workschedule.ui
+package com.childmathematics.android.workschedule.navigation.ui
 
 import android.os.Build
 import androidx.activity.ComponentActivity

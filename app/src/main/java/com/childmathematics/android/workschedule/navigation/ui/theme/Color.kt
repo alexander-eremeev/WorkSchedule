@@ -1,4 +1,4 @@
-package com.childmathematics.android.workschedule.ui.theme
+package com.childmathematics.android.workschedule.navigation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

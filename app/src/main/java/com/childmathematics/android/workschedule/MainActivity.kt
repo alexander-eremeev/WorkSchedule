@@ -26,8 +26,8 @@ import com.childmathematics.android.workschedule.navigation.content.ContentBlue
 import com.childmathematics.android.workschedule.navigation.content.ContentGreen
 import com.childmathematics.android.workschedule.navigation.content.ContentPurple
 import com.childmathematics.android.workschedule.navigation.content.ContentRed
-import com.childmathematics.android.workschedule.ui.setEdgeToEdgeConfig
-import com.childmathematics.android.workschedule.ui.theme.WorkscheduleTheme
+import com.childmathematics.android.workschedule.navigation.ui.setEdgeToEdgeConfig
+import com.childmathematics.android.workschedule.navigation.ui.theme.WorkscheduleTheme
 
 private sealed interface TopLevelRoute {
     val icon: ImageVector

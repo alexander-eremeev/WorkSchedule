@@ -38,16 +38,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.childmathematics.android.workschedule.ui.theme.WorkscheduleTheme
-import com.childmathematics.android.workschedule.ui.theme.PastelBlue
-import com.childmathematics.android.workschedule.ui.theme.PastelGreen
-import com.childmathematics.android.workschedule.ui.theme.PastelMauve
-import com.childmathematics.android.workschedule.ui.theme.PastelOrange
-import com.childmathematics.android.workschedule.ui.theme.PastelPink
-import com.childmathematics.android.workschedule.ui.theme.PastelPurple
-import com.childmathematics.android.workschedule.ui.theme.PastelRed
-import com.childmathematics.android.workschedule.ui.theme.PastelYellow
-import com.childmathematics.android.workschedule.ui.theme.WorkscheduleTheme
+import com.childmathematics.android.workschedule.navigation.ui.theme.WorkscheduleTheme
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelBlue
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelGreen
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelMauve
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelOrange
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelPink
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelPurple
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelRed
+import com.childmathematics.android.workschedule.navigation.ui.theme.PastelYellow
 
 
 @Composable

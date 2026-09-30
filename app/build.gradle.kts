@@ -157,6 +157,7 @@ extensions.configure<RoomExtension> {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.navigation.common.ktx)
     implementation(libs.androidx.ui)
     //   implementation(libs.ads.mobile.sdk)
 //--------------------------------------------------------------------------
