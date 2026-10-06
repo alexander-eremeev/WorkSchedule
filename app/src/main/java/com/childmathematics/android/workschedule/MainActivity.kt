@@ -7,6 +7,10 @@ import androidx.activity.compose.setContent
 import com.childmathematics.android.workschedule.navigation.ui.setEdgeToEdgeConfig
 
 import com.childmathematics.android.workschedule.navigation.commonui.NavCommonUiAct
+import com.childmathematics.android.workschedule.navigation.conditional.NavConditionalAct
+import com.childmathematics.android.workschedule.navigation.navscenedecorator.NavResponsiveNavigationSceneDecoratorAct
+import com.childmathematics.android.workschedule.navigation.scenes.listdetail.NaListDetailAct
+import com.childmathematics.android.workschedule.navigation.scenes.twopane.NavTwoPaneAct
 
 
 class MainActivity : ComponentActivity() {
@@ -14,7 +18,11 @@ class MainActivity : ComponentActivity() {
         setEdgeToEdgeConfig()
         super.onCreate(savedInstanceState)
         setContent {
-            NavCommonUiAct()
+            //NavCommonUiAct()
+            //NavConditionalAct()
+            NavResponsiveNavigationSceneDecoratorAct()
+            //NavTwoPaneAct()
+            //NaListDetailAct()
         }
     }
 }

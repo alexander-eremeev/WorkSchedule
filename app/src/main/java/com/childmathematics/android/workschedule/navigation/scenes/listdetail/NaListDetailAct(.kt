@@ -23,6 +23,7 @@ import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
@@ -114,7 +115,49 @@ class ListDetailActivity : ComponentActivity() {
         }
     }
 }
+//----------------------------------
+@Composable
+fun NaListDetailAct() {
+    Scaffold { paddingValues ->
 
+        val backStack = rememberNavBackStack(ConversationList)
+        val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
+
+        SharedTransitionLayout {
+            NavDisplay(
+                backStack = backStack,
+                onBack = { backStack.removeLastOrNull() },
+                sceneStrategies = listOf(listDetailStrategy),
+                sharedTransitionScope = this,
+                modifier = Modifier.padding(paddingValues),
+                entryProvider = entryProvider {
+                    entry<ConversationList>(
+                        metadata = ListDetailScene.listPane()
+                    ) {
+                        ConversationListScreen(
+                            onConversationClicked = { detailRoute ->
+                                backStack.addDetail(detailRoute)
+                            }
+                        )
+                    }
+                    entry<ConversationDetail>(
+                        metadata = ListDetailScene.detailPane()
+                    ) { conversationDetail ->
+                        ConversationDetailScreen(
+                            conversationDetail = conversationDetail,
+                            onBack = { backStack.removeLastOrNull() },
+                            onProfileClicked = { backStack.add(Profile) }
+                        )
+                    }
+                    entry<Profile> {
+                        ProfileScreen()
+                    }
+                }
+            )
+        }
+    }
+}
+//+++++++++++++++++++++++++++++++++++++
 private fun NavBackStack<NavKey>.addDetail(detailRoute: ConversationDetail) {
 
     // Remove any existing detail routes before adding this detail route.

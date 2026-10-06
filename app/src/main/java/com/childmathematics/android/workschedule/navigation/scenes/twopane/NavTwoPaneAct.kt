@@ -24,6 +24,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.dropUnlessResumed
@@ -104,7 +105,57 @@ class TwoPaneActivity : ComponentActivity() {
         }
     }
 }
+//-----------------------------------------
+@Composable
+fun NavTwoPaneAct(){
+    val backStack = rememberNavBackStack(Home)
+    val twoPaneStrategy = rememberTwoPaneSceneStrategy<NavKey>()
 
+    SharedTransitionLayout {
+        NavDisplay(
+            backStack = backStack,
+            onBack = { backStack.removeLastOrNull() },
+            sceneStrategies = listOf(twoPaneStrategy),
+            sharedTransitionScope = this,
+            entryProvider = entryProvider {
+                entry<Home>(
+                    metadata = TwoPaneScene.twoPane()
+                ) {
+                    ContentRed("Welcome to Nav3") {
+                        Button(onClick = { backStack.addProductRoute(1) }) {
+                            Text("View the first product")
+                        }
+                    }
+                }
+                entry<Product>(
+                    metadata = TwoPaneScene.twoPane()
+                ) { product ->
+                    ContentBase(
+                        "Product ${product.id} ",
+                        Modifier.background(colors[product.id % colors.size])
+                    ) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Button(onClick = dropUnlessResumed {
+                                backStack.addProductRoute(product.id + 1)
+                            }) {
+                                Text("View the next product")
+                            }
+                            Button(onClick = dropUnlessResumed {
+                                backStack.add(Profile)
+                            }) {
+                                Text("View profile")
+                            }
+                        }
+                    }
+                }
+                entry<Profile> {
+                    ContentGreen("Profile (single pane only)")
+                }
+            }
+        )
+    }
+}
+//+++++++++++++++++++++++++++++++++++++++++
 private fun NavBackStack<NavKey>.addProductRoute(productId: Int) {
     val productRoute =
         Product(productId)

@@ -16,9 +16,6 @@
 
 package com.childmathematics.android.workschedule.navigation.conditional
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -39,7 +36,6 @@ import androidx.navigation3.ui.NavDisplay
 import com.childmathematics.android.workschedule.navigation.content.ContentBlue
 import com.childmathematics.android.workschedule.navigation.content.ContentGreen
 import com.childmathematics.android.workschedule.navigation.content.ContentYellow
-import com.childmathematics.android.workschedule.navigation.ui.setEdgeToEdgeConfig
 import kotlinx.serialization.Serializable
 
 
@@ -88,7 +84,7 @@ private data object Profile : ConditionalNavKey(requiresLogin = true)
 private data class Login(
     val redirectToKey: ConditionalNavKey? = null
 ) : ConditionalNavKey()
-
+/*
 class ConditionalActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -152,7 +148,65 @@ class ConditionalActivity : ComponentActivity() {
         }
     }
 }
+*/
+// --------------------------------
+@Composable
+fun NavConditionalAct() {
+    val backStack = rememberNavBackStack<ConditionalNavKey>(Home)
+    var isLoggedIn by rememberSaveable {
+        mutableStateOf(false)
+    }
+    val navigator = remember {
+        Navigator(
+            backStack = backStack,
+            onNavigateToRestrictedKey = { redirectToKey -> Login(redirectToKey) },
+            isLoggedIn = { isLoggedIn }
+        )
+    }
 
+        NavDisplay(
+        backStack = backStack,
+        onBack = { navigator.goBack() },
+        entryProvider = entryProvider {
+            entry<Home> {
+                ContentGreen("Welcome to Nav3. Logged in? ${isLoggedIn}") {
+                    Column {
+                        Button(onClick = dropUnlessResumed { navigator.navigate(Profile) }) {
+                            Text("Profile")
+                        }
+                        Button(onClick = dropUnlessResumed { navigator.navigate(Login()) }) {
+                            Text("Login")
+                        }
+                    }
+                }
+            }
+            entry<Profile> {
+                ContentBlue("Profile screen (only accessible once logged in)") {
+                    Button(onClick = dropUnlessResumed {
+                        isLoggedIn = false
+                        navigator.navigate(Home)
+                    }) {
+                        Text("Logout")
+                    }
+                }
+            }
+            entry<Login> { key ->
+                ContentYellow("Login screen. Logged in? $isLoggedIn") {
+                    Button(onClick = dropUnlessResumed {
+                        isLoggedIn = true
+                        key.redirectToKey?.let { targetKey ->
+                            backStack.remove(key)
+                            navigator.navigate(targetKey)
+                        }
+                    }) {
+                        Text("Login")
+                    }
+                }
+            }
+        }
+    )
+}
+//-------------------------------
 
 // An overload of `rememberNavBackStack` that returns a subtype of `NavKey`.
 // See https://issuetracker.google.com/issues/463382671 for a discussion of this function

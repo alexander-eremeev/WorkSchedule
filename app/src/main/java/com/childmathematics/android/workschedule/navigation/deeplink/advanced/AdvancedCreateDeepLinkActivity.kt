@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -127,7 +128,71 @@ class AdvancedCreateDeepLinkActivity: ComponentActivity() {
         }
     }
 }
+// -------------------------------
+@Composable
+fun NavAdvancedCreateDeepLinkAct() {
+    EntryScreen("Sandbox - Build Your Deeplink Intent") {
+        val initFirstName = MENU_OPTIONS_FIRST_NAME.values.first().first()
+        val initLocation = MENU_OPTIONS_LOCATION.values.last().first()
+        val initTaskStack = MENU_OPTIONS_TASK_STACK.values.first().first()
+        var firstName by remember { mutableStateOf(initFirstName) }
+        var location by remember { mutableStateOf(initLocation) }
+        var taskStack by remember { mutableStateOf(initTaskStack) }
 
+        // select first name
+        MenuDropDown(
+            menuOptions = MENU_OPTIONS_FIRST_NAME,
+        ) { _, selected ->
+            firstName = selected
+        }
+
+        // select first name
+        MenuDropDown(
+            menuOptions = MENU_OPTIONS_LOCATION,
+        ) { _, selected ->
+            location = selected
+        }
+
+        // select current task stack or build new task stack
+        // Выберите текущий стек задач или создайте новый стек задач
+        MenuDropDown(
+            menuOptions = MENU_OPTIONS_TASK_STACK,
+        ) { _, selected ->
+            taskStack = selected
+        }
+
+        // build final deeplink URL and Intent
+        // Создание окончательного URL-адреса диплинка и намерения
+        val finalUrl = "${ADVANCED_PATH_BASE}/user/$firstName/$location"
+
+        // display Intent info
+        val flagString = if (taskStack == TAG_NEW_TASK) {
+            "Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK"
+        } else "<none>"
+        val intentString = """
+                        | Final Intent:
+                        | data = "$finalUrl"
+                        | action = Intent.ACTION_VIEW
+                        | flags = $flagString
+                    """.trimMargin()
+
+        TextContent(intentString)
+
+        // deeplink to target
+        PaddedButton("Deeplink Away!") {
+            val intent = Intent().apply {
+                data = finalUrl.toUri()
+                action = Intent.ACTION_VIEW
+                if (taskStack == TAG_NEW_TASK) {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+            }
+
+     //?       startActivity(intent)
+        }
+    }
+}
+// ===============================
 private const val TAG_FIRST_NAME = "firstName"
 private const val TAG_LOCATION = "location"
 private const val TAG_TASK_STACK = "Task stack"
