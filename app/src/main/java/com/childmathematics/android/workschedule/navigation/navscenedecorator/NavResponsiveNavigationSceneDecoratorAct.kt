@@ -72,6 +72,22 @@ class ResponsiveNavigationSceneDecoratorActivity : ComponentActivity() {
 // -----------------------------------------
 @Composable
 fun NavResponsiveNavigationSceneDecoratorAct() {
+    /*
+    SharedTransitionLayout создает компоновку (layout) и область SharedTransitionScope для дочерних элементов,
+    определенных в параметре content. Любой дочерний элемент (прямой или косвенный) внутри SharedTransitionLayout
+    может использовать область SharedTransitionScope для создания переходов с общими элементами
+    (shared element transitions) или переходов с общими границами (shared bounds transitions).
+    Примечание: SharedTransitionLayout создает новую компоновку. Если вы не хотите вводить дополнительный
+    слой компоновки между содержимым и родительским элементом, рассмотрите возможность использования
+    SharedTransitionScope напрямую.
+    Ниже приведен пример использования SharedTransitionLayout для одновременного создания перехода с общим
+    элементом и перехода с общими границами. Обратитесь к документации API для методов
+    SharedTransitionScope.sharedElement и SharedTransitionScope.sharedBounds, чтобы найти более простые
+    примеры их раздельного использования.
+    Параметры:
+    modifier — модификаторы, применяемые к компоновке.
+    content — дочерние composable-функции, которые необходимо разместить.
+     */
     SharedTransitionLayout {
         val navigationState = rememberNavigationState(
             startRoute = RouteA,
