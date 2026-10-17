@@ -50,8 +50,14 @@ data class ResponsiveNavigationScene<T : Any>(
             animatedContentScope.transition.targetState == EnterExitState.Visible
 
         with(sharedTransitionScope) {
+
+            // Возвращает true, если minWidthDp больше или равно widthDpBreakpoint, в противном случае — false.
+            // При обработке WindowSizeClass учитывайте, что результат работы этого метода зависит от порядка вызова:
+            // проверку следует выполнять, начиная с наибольших пороговых значений (breakpoints) и переходя к наименьшим.
+            // Нижняя граница для размерного класса со средней шириной (в dp).
             if (windowSizeClass.isWidthAtLeastBreakpoint(WindowSizeClass.WIDTH_DP_MEDIUM_LOWER_BOUND)) {
-                Row(Modifier.fillMaxSize()) {
+                // minWidthDp >= widthDpBreakpoint
+                Row(Modifier.fillMaxSize()) {// горизонтально
                     Box(
                         modifier = Modifier
                             .cacheSize(!isMovableContentCaller)
@@ -69,7 +75,8 @@ data class ResponsiveNavigationScene<T : Any>(
                     }
                 }
             } else {
-                Column(Modifier.fillMaxSize()) {
+                // minWidthDp < widthDpBreakpoint
+                Column(Modifier.fillMaxSize()) {// вертикально
                     Box(modifier = Modifier.weight(1f)) {
                         scene.content()
                     }
