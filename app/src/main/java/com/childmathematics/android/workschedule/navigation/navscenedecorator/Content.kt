@@ -104,8 +104,11 @@ fun EntryProviderScope<NavKey>.featureASection(
     entry<RouteA>(
         metadata = ListDetailScene.listPane()
     ) {
+        Text(
+            text = "Начало ")
         Surface(modifier = Modifier.fillMaxHeight()) {
             var contentPadding by remember { mutableStateOf(PaddingValues()) }
+
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
