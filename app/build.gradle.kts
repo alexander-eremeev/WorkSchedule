@@ -157,11 +157,11 @@ extensions.configure<RoomExtension> {
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.navigation.common.ktx)
-    implementation(libs.androidx.ui)
+//  implementation(libs.androidx.navigation.common.ktx)
+//  implementation(libs.androidx.ui)
     //   implementation(libs.ads.mobile.sdk)
 //--------------------------------------------------------------------------
-    implementation( libs.dev.chrisbanes.snapper.snapper)    //?????? Snapper в настоящее время устарел,
+//  implementation( libs.dev.chrisbanes.snapper.snapper)    //?????? Snapper в настоящее время устарел,
     // поскольку его функционал заменен на SnapFlingBehavior,
     // доступный в Jetpack Compose 1.3.0.
 
@@ -176,65 +176,65 @@ dependencies {
     implementation(libs.androidx.appcompat)
 
     // Kotlin Coroutines
-    implementation(libs.jetbrains.kotlin.coroutines.core)
-    implementation(libs.jetbrains.kotlin.coroutines.android)
+//  implementation(libs.jetbrains.kotlin.coroutines.core)
+//  implementation(libs.jetbrains.kotlin.coroutines.android)
 
     // Hilt
-    implementation(libs.jetbrains.kotlin.metadata)
-    implementation(libs.google.dagger.hilt)
-    implementation(libs.androidx.compose.ui.unit)
-    implementation(libs.androidx.compose.foundation.layout)
-    implementation(libs.androidx.foundation)
-    implementation(libs.androidx.core.i18n)
+//  implementation(libs.jetbrains.kotlin.metadata)
+  implementation(libs.hilt.android)
+//  implementation(libs.androidx.compose.ui.unit)
+//  implementation(libs.androidx.compose.foundation.layout)
+//  implementation(libs.androidx.foundation)
+//  implementation(libs.androidx.core.i18n)
     //testImplementation(libs.junit.test)
-    ksp(libs.google.dagger.hilt.compiler )
+  ksp(libs.hilt.compiler )
 
     // Webkit
-    implementation(libs.androidx.webkit.webkit)
+//    implementation(libs.androidx.webkit.webkit)
 
-    implementation(libs.google.accompanist.swiperefresh)
-    implementation(libs.google.accompanist.systemuicontroller)
+//  implementation(libs.google.accompanist.swiperefresh)
+//  implementation(libs.google.accompanist.systemuicontroller)
 
-    implementation(libs.androidx.glance)
-    implementation(libs.androidx.glance.appwidget)
-    implementation(libs.androidx.glance.material3)
+//    implementation(libs.androidx.glance)
+//    implementation(libs.androidx.glance.appwidget)
+//    implementation(libs.androidx.glance.material3)
     //---------------------------------------------
     // for Play In-App Update
-    implementation(libs.google.play.appupdate)
-    implementation(libs.google.play.appupdate.ktx)
+//    implementation(libs.google.play.appupdate)
+//    implementation(libs.google.play.appupdate.ktx)
     // ---------------------------------------------------------------------
     // Compose
     // For Compose runtime by default coroutine runtime already included from ui, foundation, implicitly
     // Not able to get rid of material lib due to we still use these component and not available yet in material3
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
+//    implementation(libs.androidx.compose.ui)
+//    implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material.iconsExtended)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.window.size)
 
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+//    implementation(libs.androidx.navigation.compose)
+//    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewModelCompose)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+//    implementation(libs.androidx.lifecycle.runtime.compose)
+//    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
     // песочница улучшения конфиденциальности пользователей
-    implementation(libs.androidx.privacysandbox.tools.core)
+//    implementation(libs.androidx.privacysandbox.tools.core)
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
-    implementation(libs.splashscreen)
+//    implementation(libs.splashscreen)
     //------------------------------
-    implementation(libs.androidx.material3.navigation3)
+    implementation(libs.androidx.compose.material3.adaptive.navigation3)
 
-    implementation(libs.kotlinx.serialization.core)
+//    implementation(libs.kotlinx.serialization.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+//    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
 
     //========================================
 
@@ -243,26 +243,26 @@ dependencies {
     // DATA SUPPORT
     // ////
     // Room
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)            // Kotlin Symbol Processing (KSP)
-    implementation(libs.androidx.room.ktx)      //Kotlin Extensions and Coroutines support for Room
+//    implementation(libs.androidx.room.runtime)
+//    ksp(libs.androidx.room.compiler)            // Kotlin Symbol Processing (KSP)
+//    implementation(libs.androidx.room.ktx)      //Kotlin Extensions and Coroutines support for Room
     //implementation(libs.androidx.room.common)
     // /////////////
     // ADS SUPPORT
     // ////
     //implementation(libs.google.ads)
-    implementation(libs.yandex.mobileads)
-    implementation(libs.yandex.appmetrica)
+//    implementation(libs.yandex.mobileads)
+//    implementation(libs.yandex.appmetrica)
 
     // /////////////
     // TEST AND DEBUG SUPPORT
     // ////
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.test.ext.junit.ktx)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+//    androidTestImplementation(libs.androidx.espresso.core)
+//    androidTestImplementation(libs.androidx.test.ext.junit.ktx)
+//    debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    testImplementation(libs.jetbrains.test.coroutines)
+//    testImplementation(libs.jetbrains.test.coroutines)
 //    testImplementation(libs.junit.test)
 //    androidTestImplementation(libs.androidx.test.ext.junit)
 //    androidTestImplementation(libs.androidx.espresso.core)
