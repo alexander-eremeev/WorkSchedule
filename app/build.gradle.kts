@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 import com.childmathematics.apps.android.workschedule.NiaBuildType
+import java.util.Properties
+import java.io.FileInputStream
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 
 plugins {
     alias(libs.plugins.workschedule.android.application)
@@ -33,7 +38,13 @@ android {
         applicationId = "com.childmathematics.apps.android.workschedule"
         versionCode = 8
         versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
-
+/*
+        applicationId =  libs.versions.applicationId.get()
+        versionCode = 201
+        versionName = "2.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = lib
+ */
         // Custom test runner to set up Hilt dependency graph
         testInstrumentationRunner = "com.childmathematics.apps.android.workschedule.core.testing.NiaTestRunner"
     }
@@ -110,7 +121,19 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.testManifest)
     debugImplementation(projects.uiTestHiltManifest)
+/*
+   // /////////////
+    // ADS SUPPORT
+    // ////
+    //implementation(libs.google.ads)
+    implementation(libs.yandex.mobileads)
+    implementation(libs.yandex.appmetrica)
 
+    // /////////////
+    // TEST AND DEBUG SUPPORT
+    // ///
+
+ */
     kspTest(libs.hilt.compiler)
 
     testImplementation(projects.core.dataTest)
@@ -147,4 +170,10 @@ baselineProfile {
 
 dependencyGuard {
     configuration("prodReleaseRuntimeClasspath")
+}
+//========================================================================
+fun getDate(): String {
+    val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+    return "\"" + LocalDateTime.now().format(formatter) + "\""
+//========================================================================
 }

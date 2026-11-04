@@ -10,11 +10,11 @@ compile-sdk = "37"  #
 # @keep
 ndkVersion = "30.0.16138531"    #		30.0.16138531rc1
 # @keep
-versionCode = "001"
+versionCode = "201"
 # @keep
-versionName = "0.0.1"
+versionName = "2.0.1"
 # @keep
-applicationId = "com.childmathematics.android.workschedule"
+applicationId = "com.childmathematics.apps.android.workschedule"
 # @keep
 appNameRelease = "WorkSchedule"
 # @keep
@@ -99,7 +99,7 @@ uiTestJunit4 = "1.12.1"     #
 #===== Yandex =====
 #================
 yandexmMobileads = "8.6.0"          #
-yandexAppMetrica = "8.6.0"          #
+yandexAppMetrica = "8.6.0"
 
 [bundles]
 androidx-compose-ui-test = ["androidx-compose-ui-test", "androidx-compose-ui-testManifest"]
@@ -199,6 +199,12 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+#================
+#===== Yandex =====
+#================
+yandex-mobileads = { module = "com.yandex.android:mobileads", version.ref = "yandexmMobileads" }
+yandex-appmetrica = { module = "io.appmetrica.analytics:analytics", version.ref = "yandexAppMetrica" }
+#===================
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
