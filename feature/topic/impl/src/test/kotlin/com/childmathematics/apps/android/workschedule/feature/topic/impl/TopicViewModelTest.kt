@@ -243,7 +243,7 @@ private val sampleNewsResources = listOf(
             "thank you all.",
         url = "https://youtu.be/-fJ6poHQrjM",
         headerImageUrl = "https://i.ytimg.com/vi/-fJ6poHQrjM/maxresdefault.jpg",
-        publishDate = kotlin.time.Instant.parse("2021-11-09T00:00:00.000Z"),
+        publishDate = kotlin.time.Instant.parse("2026-10-09T00:00:00.000Z"),
         type = "Video 📺",
         topics = listOf(
             Topic(

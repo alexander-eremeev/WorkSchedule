@@ -2935,7 +2935,7 @@
     "content": "On this episode of Gradle and AGP Build APIs for MAD Skills, Murat will discuss Gradle tasks, providers, properties, and basics of task inputs and outputs. Next, you will be able to take your plugin a step further and learn how to get access to various build artifacts using the new Artifact API. ",
     "url": "https://www.youtube.com/watch?v=SB4QlngQQW0",
     "headerImageUrl": "https://i3.ytimg.com/vi/SB4QlngQQW0/maxresdefault.jpg",
-    "publishDate": "2021-11-29T00:00:00.000Z",
+    "publishDate": "2026-10-29T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5"
@@ -3083,7 +3083,7 @@
     "content": "In this episode, Chet and Romain talked with Nicole McWilliams and Petr Čermák from the London engineering office about their work on App Widgets and Digital Wellbeing.",
     "url": "https://adbackstage.libsyn.com/flibberty-widget",
     "headerImageUrl": "https://ssl-static.libsyn.com/p/assets/4/0/e/c/40ec1fb11096bffed959afa2a1bf1c87/adb-180-flibberty-widget.png",
-    "publishDate": "2021-11-30T00:00:00.000Z",
+    "publishDate": "2026-10-30T00:00:00.000Z",
     "type": "Podcast 🎙",
     "topics": [
       "13"
@@ -3286,7 +3286,7 @@
     "content": "Learn how to configure your build, customize the build process to your needs and how to write your own plugins to extend your build even further.",
     "url": "https://www.youtube.com/watch?v=mk0XBWenod8&list=PLWz5rJ2EKKc8fyNmwKXYvA2CqxMhXqKXX",
     "headerImageUrl": "https://i3.ytimg.com/vi/mk0XBWenod8/maxresdefault.jpg",
-    "publishDate": "2021-11-15T00:00:00.000Z",
+    "publishDate": "2026-10-15T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5",
@@ -3328,7 +3328,7 @@
     "content": "In this episode of the Accessibility series, you can learn more about the StateDescription API, when to use stateDescription and contentDescription, and how to represent error states to the end user.",
     "url": "https://youtu.be/JvWM2PjLJls",
     "headerImageUrl": "https://i.ytimg.com/vi/JvWM2PjLJls/maxresdefault.jpg",
-    "publishDate": "2021-11-30T00:00:00.000Z",
+    "publishDate": "2026-10-30T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "2"
@@ -3343,7 +3343,7 @@
     "content": "This third and last episode of the Gradle MAD Skills series teaches you how to get access to various build artifacts using the new Artifact API.",
     "url": "https://youtu.be/SB4QlngQQW0",
     "headerImageUrl": "https://i.ytimg.com/vi/SB4QlngQQW0/maxresdefault.jpg",
-    "publishDate": "2021-11-29T00:00:00.000Z",
+    "publishDate": "2026-10-29T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5"
@@ -3358,7 +3358,7 @@
     "content": "In this second episode of the Gradle MAD Skills series, Murat explains how to write your own custom Gradle plugin.",
     "url": "https://youtu.be/LPzBVtwGxlo",
     "headerImageUrl": "https://i.ytimg.com/vi/LPzBVtwGxlo/maxresdefault.jpg",
-    "publishDate": "2021-11-22T00:00:00.000Z",
+    "publishDate": "2026-10-22T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5"
@@ -3373,7 +3373,7 @@
     "content": "Learn about a new feature in CameraX to convert YUV, the format that CameraX produces, to RGB used for image analysis capabilities available in TensorFlow Lite, for example. Read the blog post for more information about these formats and how to use the new conversion feature.",
     "url": "https://medium.com/androiddevelopers/convert-yuv-to-rgb-for-camerax-imageanalysis-6c627f3a0292",
     "headerImageUrl": "https://miro.medium.com/max/1400/1*cuOorbZgMbRvkSSGuDGccw.png",
-    "publishDate": "2021-11-19T00:00:00.000Z",
+    "publishDate": "2026-10-19T00:00:00.000Z",
     "type": "Article 📚",
     "topics": [
       "8",
@@ -3389,7 +3389,7 @@
     "content": "The 1.4.0 release of these libraries brings stable support for multiple back stacks.",
     "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.4.0",
     "headerImageUrl": "https://developer.android.com/images/social/android-developers.png",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Jetpack release 🚀",
     "topics": [
       "8",
@@ -3403,7 +3403,7 @@
     "content": "The 1.0 stable release of Emoji2 allows you to use modern emojis in your app.",
     "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.0.0",
     "headerImageUrl": "https://developer.android.com/images/social/android-developers.png",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Jetpack release 🚀",
     "topics": [
       "8",
@@ -3417,7 +3417,7 @@
     "content": "The new 2.4 release of Lifecycle introduces repeatOnLifecycle and flowWithLifecycle.",
     "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.4.0",
     "headerImageUrl": "https://developer.android.com/images/social/android-developers.png",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Jetpack release 🚀",
     "topics": [
       "8",
@@ -3431,7 +3431,7 @@
     "content": "The new 3.1 release of Paging changes the behavior of LoadState.",
     "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.1.0",
     "headerImageUrl": "https://developer.android.com/images/social/android-developers.png",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Jetpack release 🚀",
     "topics": [
       "8",
@@ -3445,7 +3445,7 @@
     "content": "The library that you use to build custom tiles for Wear OS devices is now stable.",
     "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0",
     "headerImageUrl": "https://developer.android.com/images/social/android-developers.png",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Jetpack release 🚀",
     "topics": [
       "8",
@@ -3459,7 +3459,7 @@
     "content": "The accessibility series continues on with more information on how to create custom accessibility actions to make your apps more accessible. You can provide a custom action to the accessibility services and implement logic related to the action. For more information, check out the following episode!",
     "url": "https://youtu.be/wWDYIGk0Kdo",
     "headerImageUrl": "https://i.ytimg.com/vi/wWDYIGk0Kdo/maxresdefault.jpg",
-    "publishDate": "2021-11-17T00:00:00.000Z",
+    "publishDate": "2026-10-17T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "2"
@@ -3474,7 +3474,7 @@
     "content": "Improving app startup time is not a trivial task and requires a deep understanding of things that affect it. This year, the Android team and the Facebook app team have been working together on metrics and sharing approaches to improve app startup. Read more about the findings in this blog post.",
     "url": "https://android-developers.googleblog.com/2021/11/improving-app-startup-facebook-app.html",
     "headerImageUrl": "https://1.bp.blogspot.com/-5VyrQpFJufM/YaVKxf_DanI/AAAAAAAALS4/ybeza_emDKoKP0gjiNkqfDS_ltwo0075ACLcBGAsYHQ/w1200-h630-p-k-no-nu/AppExcellence_Editorial_LessonsFromFBApp_4209x1253-01%2B%25281%2529%2B%25281%2529.png",
-    "publishDate": "2021-11-16T00:00:00.000Z",
+    "publishDate": "2026-10-16T00:00:00.000Z",
     "type": "Article 📚",
     "topics": [
       "7"
@@ -3487,7 +3487,7 @@
     "content": "Murat introduces the Gradle series and everything you'll learn in it.",
     "url": "https://youtu.be/mk0XBWenod8",
     "headerImageUrl": "https://i.ytimg.com/vi/mk0XBWenod8/maxresdefault.jpg",
-    "publishDate": "2021-11-15T00:00:00.000Z",
+    "publishDate": "2026-10-15T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5"
@@ -3502,7 +3502,7 @@
     "content": "In the first episode of the Gradle MAD Skills series, Murat explains how the Android build system works, and how to configure your build.",
     "url": "https://youtu.be/GjPS4xDMmQY",
     "headerImageUrl": "https://i.ytimg.com/vi/GjPS4xDMmQY/maxresdefault.jpg",
-    "publishDate": "2021-11-15T00:00:00.000Z",
+    "publishDate": "2026-10-15T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "5"
@@ -3517,7 +3517,7 @@
     "content": "Chet, Romain and Tor sit down to chat about the Android Developer Summit, and in particular all the new features arriving in Android Studio, along with a few other topics like Chet’s new jank stats library, the Android 12L release, and more.",
     "url": "https://adbackstage.libsyn.com/episode-178-hosts-3-guests-0",
     "headerImageUrl": "http://assets.libsyn.com/show/332855?height=250&width=250&overlay=true",
-    "publishDate": "2021-11-15T00:00:00.000Z",
+    "publishDate": "2026-10-15T00:00:00.000Z",
     "type": "Podcast 🎙",
     "topics": [
       "5",
@@ -3534,7 +3534,7 @@
     "content": "Meghan wrote about the new emoji2 library that just became stable.",
     "url": "https://medium.com/androiddevelopers/support-modern-emoji-99f6dea8e57f",
     "headerImageUrl": "https://miro.medium.com/max/1400/1*yAOOlpXKKUl5nWWsPkNb7g.png",
-    "publishDate": "2021-11-12T00:00:00.000Z",
+    "publishDate": "2026-10-12T00:00:00.000Z",
     "type": "Article 📚",
     "topics": [
       "8",
@@ -3550,7 +3550,7 @@
     "content": "In this live session, TJ and Dustin answered your questions in the usual live Q&A format.",
     "url": "https://youtu.be/8i6vrlbIVCc",
     "headerImageUrl": "https://i.ytimg.com/vi/8i6vrlbIVCc/maxresdefault.jpg",
-    "publishDate": "2021-11-11T00:00:00.000Z",
+    "publishDate": "2026-10-11T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "2"
@@ -3563,7 +3563,7 @@
     "content": "Thank you everyone for following the Now in Android series and everything the Android Developers YouTube channel has to offer. During the Android Developer Summit, our YouTube channel reached 1 million subscribers! Here’s a small video to thank you all.",
     "url": "https://youtu.be/-fJ6poHQrjM",
     "headerImageUrl": "https://i.ytimg.com/vi/-fJ6poHQrjM/maxresdefault.jpg",
-    "publishDate": "2021-11-09T00:00:00.000Z",
+    "publishDate": "2026-10-09T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "1"
@@ -3576,7 +3576,7 @@
     "content": "Tips for using the Paging library from the developer community",
     "url": "https://youtu.be/r5JgIyS3t3s",
     "headerImageUrl": "https://i.ytimg.com/vi/r5JgIyS3t3s/maxresdefault.jpg",
-    "publishDate": "2021-11-08T00:00:00.000Z",
+    "publishDate": "2026-10-08T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "2"
@@ -3589,7 +3589,7 @@
     "content": "A demonstration of different operations that can be performed with Paging. Transformations like inserting separators, when to create a new pager, and customisation options for consuming PagingData.",
     "url": "https://youtu.be/ZARz0pjm5YM",
     "headerImageUrl": "https://i.ytimg.com/vi/ZARz0pjm5YM/maxresdefault.jpg",
-    "publishDate": "2021-11-01T00:00:00.000Z",
+    "publishDate": "2026-10-01T00:00:00.000Z",
     "type": "Video 📺",
     "topics": [
       "2"
