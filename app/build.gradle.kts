@@ -127,10 +127,10 @@ dependencies {
     //implementation(libs.google.ads)
     implementation(libs.yandex.mobileads)
     implementation(libs.yandex.appmetrica)
-
     // /////////////
     // TEST AND DEBUG SUPPORT
     // ///
+
     kspTest(libs.hilt.compiler)
 
     testImplementation(projects.core.dataTest)
