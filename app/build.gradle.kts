@@ -121,7 +121,6 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.testManifest)
     debugImplementation(projects.uiTestHiltManifest)
-/*
    // /////////////
     // ADS SUPPORT
     // ////
@@ -132,8 +131,6 @@ dependencies {
     // /////////////
     // TEST AND DEBUG SUPPORT
     // ///
-
- */
     kspTest(libs.hilt.compiler)
 
     testImplementation(projects.core.dataTest)

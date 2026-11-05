@@ -205,7 +205,6 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 yandex-mobileads = { module = "com.yandex.android:mobileads", version.ref = "yandexmMobileads" }
 yandex-appmetrica = { module = "io.appmetrica.analytics:analytics", version.ref = "yandexAppMetrica" }
 #===================
-
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
