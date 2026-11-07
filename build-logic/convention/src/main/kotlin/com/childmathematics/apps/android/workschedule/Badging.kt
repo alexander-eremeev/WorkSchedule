@@ -77,6 +77,9 @@ abstract class CheckBadgingTask : DefaultTask() {
     // In order for the task to be up-to-date when the inputs have not changed,
     // the task must declare an output, even if it's not used. Tasks with no
     // output are always run regardless of whether the inputs changed
+    // Чтобы задача считалась актуальной в тех случаях, когда входные данные не изменились,
+// она должна объявлять выходной результат, даже если он не используется. Задачи, у которых
+// нет выходного результата, выполняются всегда — независимо от того, изменились ли входные данные.
     @get:OutputDirectory
     abstract val output: DirectoryProperty
 

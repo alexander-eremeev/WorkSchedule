@@ -46,6 +46,15 @@ import kotlin.text.RegexOption.DOT_MATCHES_ALL
  * - [Graph.invoke] is always executed during Gradle's Configuration phase (but takes in general less than 1 ms for a project).
  *
  * The resulting graphs can be configured with `graph.ignoredProjects` and `graph.supportedConfigurations` properties.
+ * * Задача `graphDump` генерирует графы зависимостей модулей, а задача `graphUpdate` обновляет соответствующий файл `README.md`.
+ * *
+ * * Данная реализация не является оптимальной и при необходимости может быть улучшена:
+ * * — Метод [Graph.invoke] выполняет **рекурсивный** поиск по зависимым проектам (хотя на практике переполнение стека исключено).
+ * * — Метод [Graph.invoke] каждый раз выполняется заново для всех проектов, без повторного использования промежуточных результатов.
+ * * — Метод [Graph.invoke] всегда выполняется на этапе конфигурации (Configuration phase) Gradle (однако для одного проекта это,
+ * как правило, занимает менее 1 мс).
+ * *
+ * * Настройку результирующих графов можно выполнить с помощью свойств `graph.ignoredProjects` и `graph.supportedConfigurations`.
  */
 private class Graph(
     private val root: Project,
@@ -91,6 +100,7 @@ private class Graph(
 
 /**
  * Declaration order is important, as only the first match will be retained.
+ * Порядок объявления важен, поскольку сохраняется только первое совпадение.
  */
 internal enum class PluginType(val id: String, val ref: String, val style: String) {
     AndroidApplication(
@@ -174,6 +184,7 @@ private abstract class GraphDumpTask : DefaultTask() {
         val dependencies: Set<Dependency> = dependencies.get()
             .flatMapTo(mutableSetOf()) { (project, entries) -> entries.map { it.toDependency(project) } }
         // FrontMatter configuration (not supported yet on GitHub.com)
+        // Конфигурация FrontMatter (пока не поддерживается на GitHub.com)
         appendLine(
             // language=YAML
             """

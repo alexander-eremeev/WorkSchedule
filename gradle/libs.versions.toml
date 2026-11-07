@@ -29,8 +29,8 @@ keystorePropertiesFile = "G:\\Public\\AndroidStudioProjects\\KeyStore\\WorkSched
 accompanist = "0.37.3"
 androidDesugarJdkLibs = "2.1.5"
 # AGP and tools should be updated together
-androidGradlePlugin = "9.5.0"
-androidTools = "32.5.0"
+androidGradlePlugin = "9.5.1"
+androidTools = "32.5.1"
 androidxActivity = "1.13.0"                      #
 androidxAppCompat = "1.8.0"                     #
 androidxBrowser = "1.10.0"                       #

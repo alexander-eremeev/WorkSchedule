@@ -58,6 +58,18 @@ private fun String.capitalize() = replaceFirstChar {
  *
  * Note that coverage data must exist before running the task. This allows us to run device
  * tests on CI using a different Github Action or an external device farm.
+ * * Создает новую задачу, которая генерирует объединенный отчет о покрытии кода с данными из локальных и
+ *
+ * * инструментальных тестов.
+ *
+ * *
+ *
+ * * `create{variant}CombinedCoverageReport`
+ *
+ * *
+ *
+ * * Обратите внимание, что данные о покрытии кода должны существовать до запуска задачи.
+ * Это позволяет нам запускать тесты на устройстве.
  */
 internal fun Project.configureJacoco(
     commonExtension: CommonExtension,
